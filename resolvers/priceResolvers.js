@@ -3,6 +3,14 @@ const { Op, fn, col, Sequelize } = require('sequelize');
 
 const priceResolvers = {
   Query: {
+    /**
+     * Retrieves price statistics for a given category.
+     * 
+     * @param {Object} _ - Unused parameter.
+     * @param {Object} args - The arguments object.
+     * @param {string} args.category - The category to retrieve price statistics for.
+     * @returns {Promise<PriceStats>} The price statistics for the specified category.
+     */
     getPriceStatsByCategory: async (_, { category }) => {
         const stats = await sequelize.query(
             `SELECT 
