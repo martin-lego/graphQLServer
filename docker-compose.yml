@@ -1,0 +1,16 @@
+services:
+  db-verusen:
+    image: 'kartoza/postgis:14-3.3'
+    platform: linux/arm64
+    container_name: db-verusen
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./verusen.sql:/docker-entrypoint-initdb.d/verusen.sql
+
+volumes:
+  pgdata:
