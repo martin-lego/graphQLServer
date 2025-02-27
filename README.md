@@ -119,14 +119,17 @@ query {
 ## 🏗️ Project Structure
 ```
 .
-├── models/          # Sequelize models
-├── resolvers/       # GraphQL resolvers
-├── schemas/         # GraphQL type definitions
-├── scripts/         # Scripts (CSV loading, migrations)
-├── docker-compose.yml # Docker setup for PostgreSQL
-├── .env             # Environment variables
-├── server.js        # Apollo Server entry point
-└── README.md        # Documentation
+├── src/
+│   ├── models/             # Sequelize models
+│   ├── resolvers/          # GraphQL resolvers
+│   ├── schemas/            # GraphQL type definitions
+│   ├── server.js           # Apollo Server entry point
+├── tests/
+│   ├── materials.test.js   # unit test for materials
+├── scripts/                # Scripts (CSV loading, migrations)
+├── docker-compose.yml      # Docker setup for PostgreSQL
+├── .env                    # Environment variables
+└── README.md               # Documentation
 ```
 
 ## 🛠️ Built With
