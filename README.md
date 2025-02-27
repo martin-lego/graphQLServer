@@ -119,9 +119,10 @@ query {
 ## 🏗️ Project Structure
 ```
 .
-├── models/          # Sequelize models
-├── resolvers/       # GraphQL resolvers
-├── schemas/         # GraphQL type definitions
+├── src/ 
+│   ├── models/          # Sequelize models
+│   ├── resolvers/       # GraphQL resolvers
+│   ├── schemas/         # GraphQL type definitions
 ├── scripts/         # Scripts (CSV loading, migrations)
 ├── docker-compose.yml # Docker setup for PostgreSQL
 ├── .env             # Environment variables
