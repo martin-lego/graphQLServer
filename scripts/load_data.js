@@ -1,13 +1,14 @@
+require('dotenv').config();
 const fs = require('fs');
 const { Client } = require('pg');
 const csvParser = require('csv-parser');
 
 const client = new Client({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'verusen',
-    password: 'postgres',
-    port: 5432,
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
 });
 
 
@@ -67,7 +68,8 @@ async function insertData() {
     const manufacturersMap = new Map();
     const insertPromises = [];
 
-    fs.createReadStream('materials.csv')
+    console.log('Readed data from CSV file');
+    fs.createReadStream('scripts/materials.csv')
         .pipe(csvParser())
         .on('data', async (row) => {
             insertPromises.push(insertRow(row, manufacturersMap));

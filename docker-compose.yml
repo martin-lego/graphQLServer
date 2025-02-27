@@ -1,7 +1,6 @@
 services:
   db-verusen:
-    image: 'kartoza/postgis:14-3.3'
-    platform: linux/arm64
+    image: 'postgres:latest'
     container_name: db-verusen
     environment:
       POSTGRES_USER: postgres
